@@ -1,0 +1,18 @@
+//Шрифт по умолчанию
+$fontFamily: "Fira Sans";
+
+//Цвета страницы
+$colorBasic: #3726f2;
+$colorHover: #3022d2;
+$colorText: #151515;
+
+$colorFooter: #515151;
+
+//Прочее переменные
+//$maxWidth: 1111;
+$maxWidthContainer: 1110 + 20;
+//Это брейкпоинты
+$md1: $maxWidthContainer + 10;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;

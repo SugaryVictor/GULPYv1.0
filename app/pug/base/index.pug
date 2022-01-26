@@ -1,0 +1,16 @@
+//- include - вставка кода
+//- extends - воспринимается как шаблон
+extends base 
+block vars
+  - var siteTitle = 'CutSpace';
+  - var active = '0';
+include mixin
+
+block content 
+  //-НЕ ЗАБЫВАЙ ПРО ВЛОЖЕННОСТЬ
+  .wrapper
+    include header
+    
+    main.page
+      //- include ../blocks/
+    include footer

@@ -1,0 +1,18 @@
+//-Для svg спрайтов
+mixin svg(name)
+  svg.footer_middle__social_link
+    use(xlink:href='../img/sprites/sprite.svg#' + name)
+//-МИксин для изображений и иконок
+mixin img(name,src)
+  a(href="" target="_blank")
+    img(src=src, alt=name)
+//-Миксин для постов на странице блога
+mixin post(name,year,category)
+  article.post__item
+mixin header(name,activeIf,src)
+  li
+    if (active == activeIf)
+      a(href=src).menu__link._active #{name}
+    else 
+      a(href=src).menu__link #{name}
+//----------------------------------------------------------------
