@@ -1,17 +1,9 @@
 import gulp from 'gulp';
-// import sass from 'gulp-sass'; //'sass';
-// import concat from 'gulp-concat';
 import browserSync from 'browser-sync'; //.create;
-// import uglify from 'gulp-uglify-es'; //.defaul;
-// import autoprefixer from 'gulp-autoprefixer';
-// import imagemin from 'gulp-imagemin';
 import del from 'del';
-// import svgSprite from 'gulp-svg-sprite';
-// import pug from 'gulp-pug';
-// import ttf2woff from 'gulp-ttf2woff';
-// import ttf2woff2 from 'gulp-ttf2woff2';
-// import fs from 'fs';
-// import zip from 'gulp-zip';
+
+// PROJECT NAME
+export let zipFileName = 'GULPYv0.5';
 
 // IMPORT TASKS
 
@@ -40,9 +32,7 @@ export const deploy = deployZip;
 export const watching = () => {
     gulp.watch(['./app/scss/**/*.scss'], copy).on('change', browserSync.reload);
     gulp.watch(['./app/js/modules/*.js', '!./app/js/bundle.min.js'], scripts);
-    gulp.watch(['./app/**/*.html'])
-        .on('change', browserSync.reload)
-        .on('change', browserSync.reload);
+    gulp.watch(['./app/**/*.html']).on('change', browserSync.reload);
     gulp.watch(['./app/img/*.svg'], sprites);
     gulp.watch(['./app/pug/**/*.pug'], pugCompiler).on(
         'change',

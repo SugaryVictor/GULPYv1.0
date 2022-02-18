@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import del from 'del';
 import zip from 'gulp-zip';
 
-let zipFileName = 'GULPYv0.5';
+import { zipFileName } from '../../gulpfile.js';
 
 export const zipFile = () => {
     del('./app/' + zipFileName + '.zip');
