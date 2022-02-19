@@ -1,6 +1,9 @@
 import gulp from 'gulp';
 import autoprefixer from 'gulp-autoprefixer';
-import sass from 'gulp-sass'; //'sass';
+import gulpSass from "gulp-sass";
+import nodeSass from "node-sass";
+const sass = gulpSass(nodeSass);
+
 import browserSync from 'browser-sync'; //.create;
 import concat from 'gulp-concat';
 

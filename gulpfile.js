@@ -8,6 +8,7 @@ export let zipFileName = 'GULPYv0.5';
 // IMPORT TASKS
 
 import { pugCompiler } from './gulp/tasks/pugCompiler.js';
+import { normal } from './gulp/tasks/pugCompiler.js';
 import { font } from './gulp/tasks/font.js';
 import { scripts } from './gulp/tasks/scripts.js';
 import { copy } from './gulp/tasks/copy.js';
@@ -21,7 +22,7 @@ import { build as buildPjt } from './gulp/services/build.js';
 
 // USING TASKS
 export const img = imgCompression;
-export const html = gulp.series(pugCompiler);
+export const html = gulp.series(pugCompiler, normal);
 export const sprites = gulp.series(spriteCompressor);
 
 // USE SERVICES
@@ -33,11 +34,8 @@ export const watching = () => {
     gulp.watch(['./app/scss/**/*.scss'], copy).on('change', browserSync.reload);
     gulp.watch(['./app/js/modules/*.js', '!./app/js/bundle.min.js'], scripts);
     gulp.watch(['./app/**/*.html']).on('change', browserSync.reload);
+    gulp.watch(['./app/pug/**/*.pug'], html).on('change', browserSync.reload);
     gulp.watch(['./app/img/*.svg'], sprites);
-    gulp.watch(['./app/pug/**/*.pug'], pugCompiler).on(
-        'change',
-        browserSync.reload
-    );
     gulp.watch(['./app/fonts/**.ttf'], font);
 };
 
