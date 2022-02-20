@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import pug from 'gulp-pug';
 import del from 'del';
 
-export const pugCompiler = async () => {
+export const pugCompiler = () => {
     return gulp
         .src('./app/pug/*/*.pug')
         .pipe(pug({ pretty: true }))
